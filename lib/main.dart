@@ -27,6 +27,15 @@ class MainApp extends StatelessWidget {
 
 class MainAppState extends ChangeNotifier {
   var current = WordPair.random();
+  var favorites = <WordPair>[];
+  void toggleFavorite() {
+    if (favorites.contains(current)) {
+      favorites.remove(current);
+    } else {
+      favorites.add(current);
+    }
+    notifyListeners();
+  }
 
   void getNext() {
     current = WordPair.random();
@@ -47,12 +56,24 @@ class MyHomePage extends StatelessWidget {
           children: [
             BigCard(pair: pair),
             SizedBox(height: 10),
-            ElevatedButton(
-                onPressed: () {
-                  AppState.getNext();
-                  print('Button pressed');
-                },
-                child: Text('Next'))
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton.icon(
+                    onPressed: () {
+                      AppState.toggleFavorite();
+                    },
+                    icon: Icon(Icons.favorite),
+                    label: Text('Like')),
+                SizedBox(width: 10),
+                ElevatedButton(
+                    onPressed: () {
+                      AppState.getNext();
+                      print('Button pressed');
+                    },
+                    child: Text('Next')),
+              ],
+            )
           ],
         ),
       ),
