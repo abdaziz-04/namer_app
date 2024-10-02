@@ -14,6 +14,7 @@ class MainApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MainAppState(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Namer App',
         theme: ThemeData(
             useMaterial3: true,
@@ -32,12 +33,16 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var AppState = context.watch<MainAppState>();
-
     return Scaffold(
       body: Column(
         children: [
-          Text('A random idea:'),
+          Text('A random AWESOME idea:'),
           Text(AppState.current.asLowerCase),
+          ElevatedButton(
+              onPressed: () {
+                print('Button pressed');
+              },
+              child: Text('Next'))
         ],
       ),
     );
