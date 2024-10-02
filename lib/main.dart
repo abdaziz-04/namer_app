@@ -120,6 +120,7 @@ class GeneratorPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text('Punya Aziz!!!'),
           BigCard(pair: pair),
           SizedBox(height: 10),
           Row(
