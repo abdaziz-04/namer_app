@@ -10,9 +10,9 @@ A new Flutter project.
 
 ![alt text](images/cantik.gif)
 
-# Tambah Fungsi
+# Tambah Fungsi Like
 
-![alt text](images/fungsi.gif)
+![alt text](images/fungsiLike.gif)
 
 # Tambah Sidebar
 
