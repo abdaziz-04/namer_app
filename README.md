@@ -18,10 +18,6 @@ A new Flutter project.
 
 ![alt text](images/sidebar.gif)
 
-# Tambah Page
-
-![alt text](images/page.gif)
-
 # Hasil Akhir
 
 ![alt text](images/final.gif)
